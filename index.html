@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Movie TVwww Website for Smart TV / Android TV / Set-Top Box</title>
+    <link rel="stylesheet" type="text/css" href="TVwww.css"/>
+    <script type="text/javascript" src="TVwww.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var payload = {
+                categories: [
+                    {
+                        title: 'On TV',
+                        ok: {
+                            contents: [
+                                {
+                                    active: true,
+                                    ok: 'https://www.youtube.com/embed/6ZfuNTqbHE8?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg',
+                                    title: 'Avengers: Infinity War',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Adventure, Action, Fantasy'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/rAqMlh0b2HU?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/aIYsjQM0piKc0ibPBCTWv3sqshj.jpg',
+                                    title: 'A Simple Favor',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Thriller, Crime, Mystery, Comedy, Drama'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/wb49-oV0F78?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/AkJQpZp9WoNdj7pLYSj1L0RcMMN.jpg',
+                                    title: 'Mission: Impossible - Fallout Mission: Impossible - Fallout',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Action, Thriller, Adventure'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/mP0VHJYFOAU?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/lHu1wtNaczFPGFDTrjCSzeLPTKN.jpg',
+                                    title: 'Bohemian Rhapsody',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Drama, Music'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/hRwS1mXkmag?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/pzt1Z3dm1Tf9ofkmzmZwaC3mMFW.jpg',
+                                    title: 'Replicas',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Thriller, Science Fiction'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/WDkg3h8PCVU?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/i2dF9UxOeb77CAJrOflj0RpqJRF.jpg',
+                                    title: 'Aquaman',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Action, Fantasy, Science Fiction, Adventure'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/lcwmDAYt22k?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/sG6n4ei1F0kVQtTs3fAjDghngpa.jpg',
+                                    title: 'Bumblebee',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Action, Adventure, Science Fiction'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/u9Mv98Gr5pY?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/2uNW4WbgBXL25BAbXGLnLqX71Sw.jpg',
+                                    title: 'Venom',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Science Fiction'
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        title: 'In Theaters',
+                        ok: {
+                            contents: [
+                                {
+                                    active: true,
+                                    ok: 'https://www.youtube.com/embed/XZ8daibM3AE?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/1yeVJox3rjo2jBKrrihIMj7uoS9.jpg',
+                                    title: 'Breaking Bad',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Drama'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/ybKUX6thF8Q?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/yxMpoHO0CXP5o9gB7IfsciilQS4.jpg',
+                                    title: 'Chilling Adventures of Sabrina',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Sci-Fi & Fantasy, Mystery, Drama'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/ouNXJyi6iQI?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/qJdfO3ahgAMf2rcmhoqngjBBZW1.jpg',
+                                    title: 'Rick and Morty',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Sci-Fi & Fantasy, Action & Adventure, Animation, Comedy'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/XWxyRG_tckY?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/lXS60geme1LlEob5Wgvj3KilClA.jpg',
+                                    title: 'Stranger Things',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Drama, Mystery, Sci-Fi & Fantasy'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/1j2sXLbzm9U?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/94gP9uXNdbypwCLORjeurlad15Z.jpg',
+                                    title: 'Vikings',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Action & Adventure, Drama'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/PpKdAxc0pn4?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/ooBGRQBdbGzBxAVfExiO8r7kloA.jpg',
+                                    title: 'The Big Bang Theory',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Comedy'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/DX1iplQQJTo?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/yTZQkSsxUFJZJe67IenRM0AEklc.jpg',
+                                    title: 'The Simpsons',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Animation, Comedy'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/NspqGM0DbbQ?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/gwPSoYUHAKmdyVywgLpKKA4BjRr.jpg',
+                                    title: 'Game of Thrones',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Sci-Fi & Fantasy, Drama, Action & Adventure'
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        title: 'Popular TV Shows',
+                        ok: {
+                            contents: [
+                                {
+                                    active: true,
+                                    ok: 'https://www.youtube.com/embed/1j2sXLbzm9U?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/94gP9uXNdbypwCLORjeurlad15Z.jpg',
+                                    title: 'Vikings',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Action & Adventure, Drama'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/PpKdAxc0pn4?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/ooBGRQBdbGzBxAVfExiO8r7kloA.jpg',
+                                    title: 'The Big Bang Theory',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Comedy'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/DX1iplQQJTo?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/yTZQkSsxUFJZJe67IenRM0AEklc.jpg',
+                                    title: 'The Simpsons',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Animation, Comedy'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/NspqGM0DbbQ?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/gwPSoYUHAKmdyVywgLpKKA4BjRr.jpg',
+                                    title: 'Game of Thrones',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Sci-Fi & Fantasy, Drama, Action & Adventure'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/XZ8daibM3AE?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/1yeVJox3rjo2jBKrrihIMj7uoS9.jpg',
+                                    title: 'Breaking Bad',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Drama'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/ybKUX6thF8Q?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/yxMpoHO0CXP5o9gB7IfsciilQS4.jpg',
+                                    title: 'Chilling Adventures of Sabrina',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Sci-Fi & Fantasy, Mystery, Drama'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/ouNXJyi6iQI?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/qJdfO3ahgAMf2rcmhoqngjBBZW1.jpg',
+                                    title: 'Rick and Morty',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Sci-Fi & Fantasy, Action & Adventure, Animation, Comedy'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/XWxyRG_tckY?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/lXS60geme1LlEob5Wgvj3KilClA.jpg',
+                                    title: 'Stranger Things',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Drama, Mystery, Sci-Fi & Fantasy'
+                                },
+                            ]
+                        }
+                    },
+                    {
+                        title: 'Popular Movies',
+                        ok: {
+                            contents: [
+                                {
+                                    active: true,
+                                    ok: 'https://www.youtube.com/embed/hRwS1mXkmag?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/pzt1Z3dm1Tf9ofkmzmZwaC3mMFW.jpg',
+                                    title: 'Replicas',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Thriller, Science Fiction'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/WDkg3h8PCVU?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/i2dF9UxOeb77CAJrOflj0RpqJRF.jpg',
+                                    title: 'Aquaman',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Action, Fantasy, Science Fiction, Adventure'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/lcwmDAYt22k?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/sG6n4ei1F0kVQtTs3fAjDghngpa.jpg',
+                                    title: 'Bumblebee',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Action, Adventure, Science Fiction'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/u9Mv98Gr5pY?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/2uNW4WbgBXL25BAbXGLnLqX71Sw.jpg',
+                                    title: 'Venom',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Science Fiction'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/6ZfuNTqbHE8?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg',
+                                    title: 'Avengers: Infinity War',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Adventure, Action, Fantasy'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/rAqMlh0b2HU?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/aIYsjQM0piKc0ibPBCTWv3sqshj.jpg',
+                                    title: 'A Simple Favor',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Thriller, Crime, Mystery, Comedy, Drama'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/wb49-oV0F78?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/AkJQpZp9WoNdj7pLYSj1L0RcMMN.jpg',
+                                    title: 'Mission: Impossible - Fallout',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Action, Thriller, Adventure'
+                                },
+                                {
+                                    ok: 'https://www.youtube.com/embed/mP0VHJYFOAU?autoplay=1',
+                                    image: 'https://image.tmdb.org/t/p/w342/lHu1wtNaczFPGFDTrjCSzeLPTKN.jpg',
+                                    title: 'Bohemian Rhapsody',
+                                    body: '',
+                                    top: '',
+                                    bottom: 'Drama, Music'
+                                }
+                            ]
+                        }
+                    }
+                ],
+                settings: {
+                    backgrounds: [
+                        './backgrounds/1.jpg',
+                        './backgrounds/2.jpg',
+                        './backgrounds/3.jpg',
+                        './backgrounds/4.jpg',
+                        './backgrounds/5.jpg',
+                        './backgrounds/6.jpg',
+                        './backgrounds/7.jpg',
+                        './backgrounds/8.jpg',
+                        './backgrounds/9.jpg',
+                        './backgrounds/10.jpg'
+                    ]
+                },
+                active: {
+                    display: 'categories.0.ok'
+                }
+            };
+            TVwww(payload);
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
