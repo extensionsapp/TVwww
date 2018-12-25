@@ -1,0 +1,32 @@
+{
+  "name": "tvwww",
+  "version": "1.0.1",
+  "description": "JSON to render cross-platform TV website theme for Android TV/Smart TV/Set-Top-Box",
+  "main": "TVwww.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/extensionsapp/TVwww.git"
+  },
+  "keywords": [
+    "smarttv",
+    "renderer",
+    "tv",
+    "androidtv",
+    "tizen",
+    "orsay",
+    "lg",
+    "samsung",
+    "toshiba",
+    "panasonic",
+    "webos"
+  ],
+  "author": "extensionsapp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/extensionsapp/TVwww/issues"
+  },
+  "homepage": "https://github.com/extensionsapp/TVwww#readme"
+}
