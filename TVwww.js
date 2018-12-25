@@ -1,11 +1,13 @@
-var TVwwwRender = function (payload) {
+var TVwwwRender = function (payload, elem) {
 
     var w = window,
         d = document,
         e = d.documentElement,
-        b = d.getElementsByTagName('body')[0],
+        b = typeof elem !== 'undefined' ? d.querySelector(elem) : d.getElementsByTagName('body')[0],
         width = w.innerWidth || e.clientWidth || b.clientWidth,
         height = w.innerHeight || e.clientHeight || b.clientHeight;
+
+    b.innerHTML = '';
 
     this.TVwwwRender = {
         contents: [],
@@ -487,18 +489,22 @@ Object.prototype.j = function () {
 
 window.TVwwwDom = [];
 
-window.TVwww = function (params) {
-    TVwwwDom.push(new TVwwwRender(params));
+window.TVwww = function (params, elem) {
+    TVwwwDom.push(new TVwwwRender(params, elem));
 };
 
-window.TVwww.load = function (payload_json, callback) {
+window.TVwww.load = function (payload_json, elem, callback) {
+    if (arguments.length === 2) {
+        callback = elem;
+        elem = undefined;
+    }
     var xhr = new XMLHttpRequest();
     xhr.open('GET', payload_json);
     xhr.onreadystatechange = function (data) {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
                 var params = JSON.parse(data.currentTarget.response);
-                window.TVwww(params);
+                window.TVwww(params, elem);
                 if (callback) callback(null, true);
             } else {
                 console.log('Error TVwww - XMLHttpRequest status:', xhr.status);

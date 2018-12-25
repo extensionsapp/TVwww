@@ -1,6 +1,6 @@
 {
   "name": "tvwww",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "JSON to render cross-platform TV website theme for Android TV/Smart TV/Set-Top-Box",
   "main": "TVwww.js",
   "scripts": {
