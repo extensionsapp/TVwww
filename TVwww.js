@@ -499,11 +499,15 @@ window.TVwww.load = function (payload_json, callback) {
             if (xhr.status === 200) {
                 var params = JSON.parse(data.currentTarget.response);
                 window.TVwww(params);
-                if (callback) callback();
+                if (callback) callback(null, true);
             } else {
                 console.log('Error TVwww - XMLHttpRequest status:', xhr.status);
                 console.log('Error TVwww - File config not found');
+                if (callback) callback(xhr.status);
             }
+        }
+        else {
+            if (callback) callback(xhr.readyState);
         }
     };
     xhr.send();
