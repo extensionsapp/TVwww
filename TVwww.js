@@ -414,6 +414,50 @@ var TVwwwRender = function (payload, elem) {
 
     }, false);
 
+    var startX = 0;
+    var startY = 0;
+    var stopX = 0;
+    var stopY = 0;
+
+    document.addEventListener('mousemove', function(event) {
+
+        stopX = event.pageX;
+        stopY = event.pageY;
+
+        if (startX || startY) return;
+
+        startX = event.pageX;
+        startY = event.pageY;
+
+        setTimeout(function () {
+
+            var result = '';
+            var x = startX - stopX;
+            var y = startY - stopY;
+
+            if (Math.abs(x) > Math.abs(y)) {
+                result = x > 0 ? 'left' : x < 0 ? 'right' : '';
+            } else {
+                result = y > 0 ? 'up' : y < 0 ? 'down' : '';
+            }
+
+            keyEmulate(result);
+
+            startX = 0;
+            startY = 0;
+            stopX = 0;
+            stopY = 0;
+        }, 100);
+    });
+
+    document.addEventListener('click', function (event) {
+        keyEmulate('Enter');
+    });
+
+    function keyEmulate(type) {
+        document.dispatchEvent(new KeyboardEvent('keydown',{'key': type}));
+    }
+
     initActive();
     renderPage();
     setStyles();
