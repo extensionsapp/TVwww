@@ -419,15 +419,22 @@ var TVwwwRender = function (payload, elem) {
     var stopX = 0;
     var stopY = 0;
 
-    document.addEventListener('mousemove', function(event) {
+    if (window.Event) {
+        document.captureEvents(Event.MOUSEMOVE);
+    }
 
-        stopX = event.pageX;
-        stopY = event.pageY;
+    document.onmousemove = function(e) {
+
+        var initX = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
+        var initY = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
+
+        stopX = initX;
+        stopY = initY;
 
         if (startX || startY) return;
 
-        startX = event.pageX;
-        startY = event.pageY;
+        startX = initX;
+        startY = initY;
 
         setTimeout(function () {
 
@@ -448,11 +455,11 @@ var TVwwwRender = function (payload, elem) {
             stopX = 0;
             stopY = 0;
         }, 100);
-    });
+    };
 
-    document.addEventListener('click', function (event) {
+    document.onclick = function() {
         keyEmulate('Enter');
-    });
+    };
 
     function keyEmulate(type) {
         document.dispatchEvent(new KeyboardEvent('keydown',{'key': type}));
@@ -490,7 +497,7 @@ Object.defineProperty(Object.prototype, 'getProp', {
         if (!desc) return this;
         var obj = this;
         var arr = desc.split('.');
-        while (arr.length && (obj = obj[arr.shift()]));
+        while (arr.length && (obj = obj[arr.shift()])){}
         return obj;
     },
     enumerable: false
@@ -509,7 +516,7 @@ Object.defineProperty(Object.prototype, 'setProp', {
         var obj = this;
         var arr = desc.split('.');
         var last = arr.pop();
-        while (arr.length && (obj = obj[arr.shift()]));
+        while (arr.length && (obj = obj[arr.shift()])){}
         obj[last] = value;
         return obj;
     },
