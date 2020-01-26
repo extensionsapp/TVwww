@@ -378,7 +378,8 @@ var TVwwwRender = function (payload, elem) {
     }
 
     function mouseKey(event) {
-        var key = event.key || event.keyCode;
+        if (!event) return;
+        var key = event.key || event.keyCode || '';
         TVwww.active.key = key = keyDown(key);
 
         if (event.defaultPrevented || !key) {
@@ -418,6 +419,7 @@ var TVwwwRender = function (payload, elem) {
     var startY = 0;
     var stopX = 0;
     var stopY = 0;
+    var move = false;
 
     if (window.Event) {
         document.captureEvents(Event.MOUSEMOVE);
@@ -430,13 +432,14 @@ var TVwwwRender = function (payload, elem) {
         var initX = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
         var initY = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
 
+        startX = startX ? startX : initX;
+        startY = startY ? startY : initY;
+
         stopX = initX;
         stopY = initY;
 
-        if (startX || startY) return;
-
-        startX = initX;
-        startY = initY;
+        if (move) return;
+        move = true;
 
         setTimeout(function () {
 
@@ -450,13 +453,12 @@ var TVwwwRender = function (payload, elem) {
                 result = y > 0 ? 'up' : y < 0 ? 'down' : '';
             }
 
-            startX = 0;
-            startY = 0;
-            stopX = 0;
-            stopY = 0;
+            startX = stopX;
+            startY = stopY;
 
-            if (!result) return;
-            mouseKey({ key: result });
+            mouseKey(result ? { key: result } : null);
+
+            move = false;
         }, 10);
     };
 
