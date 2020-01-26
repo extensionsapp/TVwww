@@ -377,7 +377,7 @@ var TVwwwRender = function (payload, elem) {
         document.getElementsByTagName('head')[0].appendChild(style);
     }
 
-    document.addEventListener('keydown', function (event) {
+    function mouseKey(event) {
         var key = event.key || event.keyCode;
         TVwww.active.key = key = keyDown(key);
 
@@ -412,7 +412,7 @@ var TVwwwRender = function (payload, elem) {
         initActive();
         renderPage(blocks);
 
-    }, false);
+    }
 
     var startX = 0;
     var startY = 0;
@@ -422,6 +422,8 @@ var TVwwwRender = function (payload, elem) {
     if (window.Event) {
         document.captureEvents(Event.MOUSEMOVE);
     }
+
+    document.onkeydown = mouseKey;
 
     document.onmousemove = function(e) {
 
@@ -448,22 +450,19 @@ var TVwwwRender = function (payload, elem) {
                 result = y > 0 ? 'up' : y < 0 ? 'down' : '';
             }
 
-            keyEmulate(result);
-
             startX = 0;
             startY = 0;
             stopX = 0;
             stopY = 0;
-        }, 100);
+
+            if (!result) return;
+            mouseKey({ key: result });
+        }, 10);
     };
 
     document.onclick = function() {
-        keyEmulate('Enter');
+        mouseKey({ key: 'Enter' });
     };
-
-    function keyEmulate(type) {
-        document.dispatchEvent(new KeyboardEvent('keydown',{'key': type}));
-    }
 
     initActive();
     renderPage();
